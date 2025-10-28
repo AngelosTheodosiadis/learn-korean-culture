@@ -34,7 +34,7 @@ It blends traditional Korean visuals with a modern app experience, built to demo
 | Language   | TypeScript                                                           |
 | Styling    | StyleSheet                                                           |
 | Navigation | [Expo Router](https://expo.github.io/router/docs)                    |
-| Design     | [Figma](https://eleannapili.framer.website/language-learning-app)]   |
+| Design     | [Figma](https://eleannapili.framer.website/language-learning-app)    |
 
 ---
 

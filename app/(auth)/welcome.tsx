@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-
+import { router } from "expo-router";
 export default function WelcomeScreen() {
   return (
     <ImageBackground
@@ -18,7 +18,7 @@ export default function WelcomeScreen() {
         <Text style={styles.textTop}>Welcome to</Text>
         <Pressable
           style={({ pressed }) => [styles.pressable, pressed && styles.pressed]}
-          onPress={() => console.log("Welcome Screen Button Pressed")}
+          onPress={() => router.replace("/(main)/home")}
         >
           <Image
             style={styles.illustration}

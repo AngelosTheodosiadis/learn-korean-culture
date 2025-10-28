@@ -5,12 +5,13 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/lkc-welcome-splash.png",
+    "backgroundColor": "#8C4242",
     "splash": {
       "image": "./assets/images/lkc-welcome-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#8C4242",
       "dark": {
-        "backgroundColor": "#000000"
+        "backgroundColor": "#8C4242"
       }
     },
     "scheme": "learnkoreanculture",
@@ -21,7 +22,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#8C4242",
         "foregroundImage": "./assets/images/lkc-welcome-splash.png",
         "backgroundImage": "./assets/images/lkc-welcome-splash.png",
         "monochromeImage": "./assets/images/lkc-welcome-splash.png"
@@ -41,9 +42,9 @@
           "image": "./assets/images/lkc-welcome-splash.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#8C4242",
           "dark": {
-            "backgroundColor": "#000000"
+            "backgroundColor": "#8C4242"
           }
         }
       ]

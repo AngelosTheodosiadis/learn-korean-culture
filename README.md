@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/images/lkr-banner.png" width="100%" alt="Learn Korean Culture App Banner" />
+  <img src="./assets/images/lkc-banner.png" width="100%" alt="Learn Korean Culture App Banner" />
 </p>
 
 <h1 align="center">Learn Korean Culture</h1>
@@ -34,7 +34,7 @@ It blends traditional Korean visuals with a modern app experience, built to demo
 | Language   | TypeScript                                                           |
 | Styling    | StyleSheet                                                           |
 | Navigation | [Expo Router](https://expo.github.io/router/docs)                    |
-| Design     | Figma                                                                |
+| Design     | [Figma(https://eleannapili.framer.website/language-learning-app)]    |
 
 ---
 

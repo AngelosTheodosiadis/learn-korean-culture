@@ -5,9 +5,9 @@ export const fonts = {
 };
 
 export const colors = {
-  primary: "#873529",
+  primary: "#8C4242",
   secondary: "#e94e77",
-  background: "#f9f9f9",
+  background: "#EEE8DF",
   surface: "#ffffff",
   textPrimary: "#F2ECE4",
   textSecondary: "#777777",
@@ -22,14 +22,21 @@ export const shadow = {
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
+    shadowRadius: 2,
     elevation: 3,
   },
   medium: {
     shadowColor: "#000",
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.4,
     shadowOffset: { width: 2, height: 4 },
-    shadowRadius: 6,
+    shadowRadius: 2,
+    elevation: 6,
+  },
+  strong: {
+    shadowColor: "#000",
+    shadowOpacity: 0.8,
+    shadowOffset: { width: 2, height: 4 },
+    shadowRadius: 2,
     elevation: 6,
   },
 };

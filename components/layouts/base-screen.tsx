@@ -1,53 +1,114 @@
-import React, { memo } from "react";
-import { StyleSheet, ScrollView, View, ViewStyle } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-
-import { colors, shadow } from "@/constants/theme";
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Pressable,
+  Text,
+  ViewStyle,
+} from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Ionicons } from "@expo/vector-icons";
+import { colors, fonts, shadow } from "@/constants/theme";
 
 interface BaseScreenProps {
-  header?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  scrollable?: boolean;
   style?: ViewStyle;
+  showHeader?: boolean;
+  title?: string;
+  onHeaderPress?: () => void;
 }
 
-const BaseScreenComponent = ({ header, children, style }: BaseScreenProps) => {
+export default function BaseScreen({
+  children,
+  scrollable = true,
+  style,
+  showHeader = false,
+  title,
+  onHeaderPress,
+}: BaseScreenProps) {
+  const insets = useSafeAreaInsets();
+
+  const content = (
+    <View
+      style={[
+        styles.content,
+        style,
+        {
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+        },
+      ]}
+    >
+      {showHeader && (
+        <View style={styles.header}>
+          <Pressable style={styles.headerButton} onPress={onHeaderPress}>
+            <Ionicons
+              name="reorder-three"
+              size={32}
+              color={colors.textPrimary}
+            />
+          </Pressable>
+          {title ? <Text style={styles.headerText}>{title}</Text> : null}
+        </View>
+      )}
+      {children}
+    </View>
+  );
+
+  const Wrapper = scrollable ? ScrollView : View;
+
   return (
-    <SafeAreaView style={styles.screen}>
-      {header && <View style={styles.header}>{header}</View>}
-      <View style={[styles.bodyWrapper, style]}>
-        <ScrollView
+    <View style={[styles.container, { backgroundColor: colors.primary }]}>
+      <View style={styles.shadowWrapper}>
+        <Wrapper
           style={styles.scrollView}
-          contentContainerStyle={{ paddingBottom: 40 }}
+          contentContainerStyle={scrollable ? { flexGrow: 1 } : undefined}
           showsVerticalScrollIndicator={false}
         >
-          {children}
-        </ScrollView>
+          {content}
+        </Wrapper>
       </View>
-    </SafeAreaView>
+    </View>
   );
-};
-
-export const BaseScreen = memo(BaseScreenComponent);
+}
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
-    backgroundColor: colors.primary,
   },
-  header: {
-    backgroundColor: colors.primary,
-    paddingVertical: 6,
-  },
-  bodyWrapper: {
+  shadowWrapper: {
     flex: 1,
-    backgroundColor: colors.background,
-    marginTop: -10,
-    marginBottom: -30,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
     ...shadow.strong,
   },
   scrollView: {
     flex: 1,
+  },
+  content: {
+    flex: 1,
+    backgroundColor: colors.background,
+    borderBottomLeftRadius: 25,
+    borderBottomRightRadius: 25,
+    marginBottom: 5,
+  },
+  header: {
+    backgroundColor: colors.primary,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+    height: 70,
+  },
+  headerButton: {
+    position: "absolute",
+    left: 15,
+    padding: 6,
+  },
+  headerText: {
+    fontFamily: fonts.family.regular,
+    fontSize: 20,
+    fontWeight: "400",
+    color: colors.textPrimary,
   },
 });

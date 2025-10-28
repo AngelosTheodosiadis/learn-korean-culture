@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
-import { BaseScreen } from "@/components/layouts/base-screen";
+import BaseScreen from "@/components/layouts/base-screen";
 
 export default function CardsScreen() {
   return (

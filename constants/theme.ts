@@ -8,13 +8,7 @@ export const colors = {
   primary: "#8C4242",
   secondary: "#e94e77",
   background: "#EEE8DF",
-  surface: "#ffffff",
   textPrimary: "#F2ECE4",
-  textSecondary: "#777777",
-  border: "#e0e0e0",
-  success: "#2ecc71",
-  warning: "#f39c12",
-  error: "#e74c3c",
 };
 
 export const shadow = {

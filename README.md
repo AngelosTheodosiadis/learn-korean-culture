@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+<p align="center">
+  <img src="./assets/images/lkr-banner.png" width="100%" alt="Learn Korean Culture App Banner" />
+</p>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<h1 align="center">Learn Korean Culture</h1>
 
-## Get started
+<p align="center">
+  <em>A beautifully designed mobile app built with Expo + React Native that helps users explore and learn about Korean culture — from food to language, history, and traditions.</em>
+</p>
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🌟 Overview
 
-2. Start the app
+**Learn Korean Culture** is an interactive mobile app designed to make cultural learning engaging.  
+It blends traditional Korean visuals with a modern app experience, built to demonstrate clean architecture and design in React Native.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🧠 Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 🎨 Beautiful onboarding & welcome screen inspired by Korean design
+- 🥢 Explore sections like Points of Interest, Language, and Traditions
+- 💬 Interactive flashcards to learn Korean words, expressions, and cultural facts
+- 📱 Built with React Native(Expo) for cross-platform performance
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🛠️ Tech Stack
 
-When you're ready, run:
+| Category   | Tools                                                                |
+| ---------- | -------------------------------------------------------------------- |
+| Framework  | [React Native](https://reactnative.dev/) + [Expo](https://expo.dev/) |
+| Language   | TypeScript                                                           |
+| Styling    | StyleSheet                                                           |
+| Navigation | [Expo Router](https://expo.github.io/router/docs)                    |
+| Design     | Figma                                                                |
 
-```bash
-npm run reset-project
-```
+---
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🗺️ Roadmap
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [x] Welcome screen
+- [ ] Home screen
+- [ ] Flashcard learning system
+- [ ] Progress tracking dashboard
+- [ ] User/Account screen

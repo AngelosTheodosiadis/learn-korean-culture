@@ -40,6 +40,7 @@ It blends traditional Korean visuals with a modern app experience, built to demo
 
 ## 🗺️ Roadmap
 
+- [x] Tab navigation
 - [x] Welcome screen
 - [ ] Home screen
 - [ ] Flashcard learning system

@@ -1,14 +1,17 @@
 import React from "react";
 import {
   View,
+  ViewProps,
   StyleSheet,
   ScrollView,
+  ScrollViewProps,
   Pressable,
   Text,
   ViewStyle,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+
 import { colors, fonts, shadow } from "@/constants/theme";
 
 interface BaseScreenProps {
@@ -28,7 +31,7 @@ export default function BaseScreen({
   title,
   onHeaderPress,
 }: BaseScreenProps) {
-  const insets = useSafeAreaInsets();
+  const { bottom } = useSafeAreaInsets();
 
   const content = (
     <View
@@ -36,8 +39,7 @@ export default function BaseScreen({
         styles.content,
         style,
         {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
+          paddingBottom: bottom,
         },
       ]}
     >
@@ -57,7 +59,9 @@ export default function BaseScreen({
     </View>
   );
 
-  const Wrapper = scrollable ? ScrollView : View;
+  const Wrapper: React.ComponentType<ViewProps | ScrollViewProps> = scrollable
+    ? ScrollView
+    : View;
 
   return (
     <View style={[styles.container, { backgroundColor: colors.primary }]}>

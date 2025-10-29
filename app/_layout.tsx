@@ -1,15 +1,18 @@
-import { colors } from "@/constants/theme";
 import { useFonts } from "expo-font";
 import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+import { colors } from "@/constants/theme";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const router = useRouter();
+  const { prefetch } = useRouter();
+  const { top } = useSafeAreaInsets();
 
   const [fontsLoaded] = useFonts({
     "Tex-Gyre-Adventor-Regular": require("@/assets/fonts/texgyreadventor-regular.otf"),
@@ -18,18 +21,19 @@ export default function RootLayout() {
   useEffect(() => {
     if (fontsLoaded) {
       SplashScreen.hideAsync();
-      router.prefetch("/home");
-      router.prefetch("/culture");
-      router.prefetch("/cards");
-      router.prefetch("/account");
+      prefetch("/home");
+      prefetch("/culture");
+      prefetch("/cards");
+      prefetch("/account");
     }
-  }, [fontsLoaded, router]);
+  }, [fontsLoaded, prefetch]);
 
   if (!fontsLoaded) return null;
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.primary }}>
-      <StatusBar style="dark" />
+    <View style={{ flex: 1 }}>
+      <View style={{ height: top, backgroundColor: colors.black }} />
+      <StatusBar backgroundColor={colors.primary} style="light" />
       <Stack
         screenOptions={{ headerShown: false }}
         initialRouteName="(auth)/welcome"

@@ -1,4 +1,3 @@
-import { colors, fonts, shadow } from "@/constants/theme";
 import {
   Image,
   ImageBackground,
@@ -8,6 +7,9 @@ import {
   View,
 } from "react-native";
 import { router } from "expo-router";
+
+import { colors, fonts, shadow } from "@/constants/theme";
+
 export default function WelcomeScreen() {
   return (
     <ImageBackground
@@ -55,13 +57,13 @@ const styles = StyleSheet.create({
   letter: {
     width: "100%",
     height: "100%",
-    tintColor: "#d78c73ff",
+    tintColor: "#e4c8c7ff",
   },
   illustrationContainer: {
     width: 283,
     height: 311,
     top: 279,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.secondary,
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "flex-start",
@@ -70,7 +72,6 @@ const styles = StyleSheet.create({
   illustration: {
     width: 250,
     height: 250,
-    color: colors.primary,
   },
   textTop: {
     fontFamily: fonts.family.regular,

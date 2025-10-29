@@ -45,13 +45,6 @@ export default function BaseScreen({
     >
       {showHeader && (
         <View style={styles.header}>
-          <Pressable style={styles.headerButton} onPress={onHeaderPress}>
-            <Ionicons
-              name="reorder-three"
-              size={32}
-              color={colors.textPrimary}
-            />
-          </Pressable>
           {title ? <Text style={styles.headerText}>{title}</Text> : null}
         </View>
       )}

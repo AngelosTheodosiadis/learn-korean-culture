@@ -1,29 +1,19 @@
 import { Tabs } from "expo-router";
 import { colors } from "@/constants/theme";
-import {
-  HomeIcons,
-  CultureIcons,
-  CardIcons,
-  AccountIcons,
-} from "@/components/icons";
+import { TabBarIcon } from "@/components/icons/tab-icon";
 
 export default function MainLayout() {
   return (
     <Tabs
-      detachInactiveScreens={false}
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        lazy: false,
         tabBarStyle: {
           backgroundColor: colors.primary,
           borderTopWidth: 0,
         },
         tabBarItemStyle: {
-          paddingTop: 10,
-        },
-        sceneStyle: {
-          backgroundColor: colors.primary,
+          paddingTop: 12,
         },
       }}
     >
@@ -31,32 +21,36 @@ export default function MainLayout() {
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ focused }) =>
-            focused ? <HomeIcons.Active /> : <HomeIcons.Inactive />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon type="home" active={focused} size={44} />
+          ),
         }}
       />
       <Tabs.Screen
         name="culture"
         options={{
-          title: "Culture tips",
-          tabBarIcon: ({ focused }) =>
-            focused ? <CultureIcons.Active /> : <CultureIcons.Inactive />,
+          title: "Culture",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon type="culture" active={focused} size={50} />
+          ),
         }}
       />
       <Tabs.Screen
         name="cards"
         options={{
-          title: "Flash Cards",
-          tabBarIcon: ({ focused }) =>
-            focused ? <CardIcons.Active /> : <CardIcons.Inactive />,
+          title: "Cards",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon type="card" active={focused} size={80} />
+          ),
         }}
       />
       <Tabs.Screen
         name="account"
         options={{
           title: "Account",
-          tabBarIcon: ({ focused }) =>
-            focused ? <AccountIcons.Active /> : <AccountIcons.Inactive />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon type="account" active={focused} size={40} />
+          ),
         }}
       />
     </Tabs>
